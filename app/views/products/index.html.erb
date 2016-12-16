@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Owner Name</th>
       <th>Name</th>
       <th>Description</th>
       <th>Price</th>
@@ -16,13 +17,16 @@
   <tbody>
     <% @products.each do |product| %>
       <tr>
+        <td><%= product.user.username %></td>
         <td><%= product.name %></td>
         <td><%= product.description %></td>
         <td><%= product.price %></td>
         <td><%= product.category %></td>
         <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if user_signed_in? && current_user.id == product.user.id %>
+          <td><%= link_to 'Edit', edit_product_path(product) %></td>
+          <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +34,5 @@
 
 <br>
 
-<%= link_to 'New Product', new_product_path %>
+<%= link_to 'New Product', new_product_path %><br />
+<%= link_to 'Logout', destroy_user_session_path, method: :delete %>
