@@ -1,3 +1,45 @@
-// Place all the styles related to the Products controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.input-field label {
+  color: #595b66;
+}
+/* label focus color */
+.input-field input[type=text]:focus + label {
+  color: #5d68c1;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #5d68c1;
+  box-shadow: 0 1px 0 0 #5d68c1;
+}
+.input-field input[type=number]:focus + label {
+  color: #5d68c1;
+}
+.input-field input[type=number]:focus {
+  border-bottom: 1px solid #5d68c1;
+  box-shadow: 0 1px 0 0 #5d68c1;
+}
+.input-field input[type=textarea]:focus + label {
+  color: #5d68c1;
+}
+.input-field input[type=textarea]:focus {
+  border-bottom: 1px solid #5d68c1;
+  box-shadow: 0 1px 0 0 #5d68c1;
+}
+.input-field textarea.materialize-textarea.valid,
+.input-field textarea.materialize-textarea:focus {
+  border-bottom: 1px solid #5d68c1;
+  box-shadow: 0 1px 0 0 #5d68c1;
+}
+/* valid color */
+.input-field input[type=text].valid {
+  border-bottom: 1px solid #5d68c1;
+  box-shadow: 0 1px 0 0 #5d68c1;
+}
+/* invalid color */
+.input-field input[type=text].invalid {
+  border-bottom: 1px solid #5d68c1;
+  box-shadow: 0 1px 0 0 #5d68c1;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+  color: #5d68c1;
+}
