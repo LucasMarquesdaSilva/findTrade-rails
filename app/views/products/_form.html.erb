@@ -11,34 +11,31 @@
         </ul>
       </div>
     <% end %>
-    <div class="row">
-      <div class="input-field col s8">
-        <%= f.label :name, for: "name" %>
-        <%= f.text_field :name, id: "name", class: "validate" %>
-      </div>
+    <div class="input-field">
+      <%= f.label :name, for: "name" %>
+      <%= f.text_field :name, id: "name", class: "validate" %>
     </div>
-    <div class = "row">
-      <div class="input-field col s8">
-        <%= f.label :description, for: "description" %>
-        <%= f.text_area :description, class: "materialize-textarea" %>
-      </div>
+
+    <div class="input-field">
+      <%= f.label :description, for: "description" %>
+      <%= f.text_area :description, class: "materialize-textarea" %>
     </div>
-    <div class = "row">
-      <div class="input-field col s8">
-        <%= f.label :price, for: "price" %>
-        <%= f.number_field :price, class: "validate" %>
-      </div>
+
+    <div class="input-field">
+      <%= f.label :price, for: "price" %>
+      <%= f.number_field :price, class: "validate" %>
     </div>
-    <div class = "row">
-      <div class="input-field col s8">
-        <%= f.label :category, for: "category" %>
-        <%= f.text_field :category, class: "validate" %>
-      </div>
+
+    <div class="input-field">
+      <%= f.label :category, for: "category" %>
+      <%= f.text_field :category, class: "validate" %>
     </div>
-    <div class="row">
-      <div class = "input-fild col s8">
-      <%= f.submit class:"btn waves-effect waves-purple" %>
+
+
+    <div class = "input-fild">
+      <%= f.submit class:" waves-effect waves-orange btn" %>
+      <%= link_to 'Back', products_path, class: "btn waves-effect" %>
     </div>
-    </div>
+
   <% end %>
 </div>
