@@ -7,7 +7,7 @@
     <%= f.label :username %><br />
     <%= f.text_field :username %>
   </div>
-  
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
@@ -37,7 +37,8 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <button class = "btn waves-effect waves-light"><%= f.submit "Update"%> <i class="material-icons right">send</i></button>
+
   </div>
 <% end %>
 
