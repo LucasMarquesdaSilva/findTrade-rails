@@ -1,41 +1,49 @@
 <div class = "form">
-  <%= form_for(product) do |f| %>
-    <% if product.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+  <%= form_for(product, html: {multipart: true}) do |f| %>
+  <% if product.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
 
-        <ul>
-        <% product.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
-    <div class="input-field">
-      <%= f.label :name, for: "name" %>
-      <%= f.text_field :name, id: "name", class: "validate" %>
+    <ul>
+      <% product.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <div class="input-field">
+    <%= f.label :name, for: "name" %>
+    <%= f.text_field :name, id: "name", class: "validate" %>
+  </div>
+
+  <div class="input-field">
+    <%= f.label :description, for: "description" %>
+    <%= f.text_area :description, class: "materialize-textarea" %>
+  </div>
+
+  <div class="input-field">
+    <%= f.label :price, for: "price" %>
+    <%= f.number_field :price, class: "validate" %>
+  </div>
+
+  <div class="input-field">
+    <%= f.label :category, for: "category" %>
+    <%= f.text_field :category, class: "validate" %>
+  </div>
+
+  <div class="file-field input-field">
+    <div class="btn">
+      <span><%= f.file_field :image %>Product Image</span>
     </div>
-
-    <div class="input-field">
-      <%= f.label :description, for: "description" %>
-      <%= f.text_area :description, class: "materialize-textarea" %>
+    <div class="file-path-wrapper">
+      <input class="file-path validate" type="text">
     </div>
+  </div>
 
-    <div class="input-field">
-      <%= f.label :price, for: "price" %>
-      <%= f.number_field :price, class: "validate" %>
-    </div>
-
-    <div class="input-field">
-      <%= f.label :category, for: "category" %>
-      <%= f.text_field :category, class: "validate" %>
-    </div>
-
-
-    <div class = "input-fild">
-      <%= f.submit class:" waves-effect waves-orange btn" %>
-      <%= link_to 'Back', products_path, class: "btn waves-effect" %>
-    </div>
+  <div class = "input-fild">
+    <%= f.submit class:" waves-effect waves-orange btn" %>
+    <%= link_to 'Back', products_path, class: "btn waves-effect" %>
+  </div>
 
   <% end %>
 </div>
