@@ -1,46 +1,63 @@
 <p id="notice"><%= notice %></p>
 <div class = "row">
   <div class = "col s11 m12">
-    <p>
-    <%= image_tag @product.image.url, class: "materialboxed responsive-img", width: '400' %>
+    <div class="card horizontal grey darken-2">
+      <div class="card-image">
+        <%= image_tag @product.image.url, class: "materialboxed responsive-img", width: '400' %>
 
-    </p>
-    <p>
-      <strong>Owner Name:</strong>
-      <%= @product.user.username %>
-    </p>
-    <p>
-      <strong>Name:</strong>
-      <%= @product.name %>
-    </p>
+      </div>
+      <div class="card-stacked ">
+        <div class="card-content white-text">
+          <h1>
+            <%= @product.name %>
+          </h1>
 
-    <p>
-      <strong>Description:</strong>
-      <%= @product.description %>
-    </p>
+          <p>
+            <strong>Owner Name:</strong>
+            <%= @product.user.username %>
+          </p>
 
-    <p>
-      <strong>Price:</strong>
-      <%= @product.price %>
-    </p>
 
-    <p>
-      <strong>Category:</strong>
-      <%= @product.category %>
-    </p>
-    <%= link_to 'Edit', edit_product_path(@product) %>
-    <%= link_to 'Back', products_path %>
+          <p>
+            <strong>Description:</strong>
+            <%= @product.description %>
+          </p>
 
-</div>
+          <p>
+            <strong>Price:</strong>
+            <%= @product.price %>
+          </p>
 
+          <p>
+            <strong>Category:</strong>
+            <%= @product.category %>
+          </p>
+        </div>
+        <div class="card-action">
+          <% if user_signed_in? && current_user.id == @product.user.id %>
+          <%= link_to 'Edit', edit_product_path(@product) %>
+          <%= link_to 'Destroy', product_path(@product), method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+          <%= link_to 'Back', products_path %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <div class = "divider"></div>
-    <div class = "row">
+<div class = "row">
+  <div class = "col s11 m12">
     <span class = "divider"></span>
+    <% if user_signed_in? %>
     <%= render partial: 'comments/form' %>
-    <% unless @product.comments.count.zero? %>
-      <h3>Comments (<%= @product.comments.size %>)</h3>
     <% end %>
+    <% unless @product.comments.count.zero? %>
+    <div class = "card-panel blue-grey darken-4"><h5 class = "blue-grey-text text-lighten-3">Comments (<%= @product.comments.size %>)</h5></div>
+    <% end %>
+
     <%= render partial: 'products/comment', collection: @product.comments %>
+
+
   </div>
 
+</div>

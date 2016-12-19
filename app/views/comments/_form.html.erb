@@ -1,12 +1,12 @@
 
-<h3>Post a Comment</h3>
+<h4>Post a Comment</h4>
 
 <%= form_for [ @product, @comment ] do |f| %>
-<p>
-  <%= f.label :body %><br/>
-  <%= f.text_area :body %>
-</p>
-<p>
-  <%= f.submit 'Submit' %>
+ <div class="input-field">
+  <%= f.label :body, for: 'textarea_comment' %>
+  <%= f.text_area :body, id: 'textarea_comment', class: 'materialize-textarea' %>
+</div>
+<div class = "input-field">
+  <%= f.submit 'comment', class: "waves-effect waves-light btn" %>
 </p>
 <% end %>

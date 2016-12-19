@@ -22,5 +22,7 @@ class CommentsController < ApplicationController
     redirect_to product_path(@comment.product)
   end
   def update
+    @product.update(product_params)
+    redirect_to product_path(@comment.product)
   end
 end
