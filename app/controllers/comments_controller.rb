@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-
+  before_filter :require_login
 
   def create
     @comment = Comment.new(comment_params)
@@ -16,6 +16,10 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+
+    redirect_to product_path(@comment.product)
   end
   def update
   end

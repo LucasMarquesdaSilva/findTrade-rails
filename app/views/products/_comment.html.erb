@@ -2,4 +2,5 @@
   <h4>Comment by: <%= comment.user.username %></h4>
   <p class = "comment"><%= comment.body %></p>
   <p>Posted <%= distance_of_time_in_words(comment.created_at, Time.now) %> later</p>
+  <%= link_to 'Destroy', product_comment_path(comment.product, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
