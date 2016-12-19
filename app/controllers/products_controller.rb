@@ -38,8 +38,6 @@ class ProductsController < ApplicationController
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
-    @comment = Comment.new
-    @comment.product_id = @product.id
   end
 
   # PATCH/PUT /products/1
