@@ -1,42 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>FindTrade</title>
-    <%= csrf_meta_tags %>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <meta name = "viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
+<head>
+  <title>FindTrade</title>
+  <%= csrf_meta_tags %>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <meta name = "viewport" content="width=device-width, initial-scale=1.0" />
+</head>
 
-  <body>
+<body>
 
-    <ul id = "dropdown" class="dropdown-content">
-      <li><%= link_to 'My Products', users_products_path %></li>
-      <li><%= link_to 'My Account', users_account_index_path %></li>
-      <li class="divider"></li>
-      <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
-    </ul>
+  <ul id = "dropdown" class="dropdown-content">
+    <li><%= link_to 'My Products', users_products_path %></li>
+    <li><%= link_to 'My Account', users_account_index_path %></li>
+    <li class="divider"></li>
+    <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+  </ul>
 
-    <ul class="side-nav" id="mobile-demo">
-      <% if user_signed_in? %>
-        <h5 class = " deep-purple accent-2 title-mobile-navSide"><li class = "purple-text text-lighten-5"><%= current_user.username %></li></h5>
-          <li><%= link_to "All Products", products_path %></li>
-          <li><%= link_to 'New Product', new_product_path %></li>
-          <li><%= link_to 'My Products', users_products_path, class: 'grey-text text-darken-4'%></li>
-          <li><%= link_to 'My Account', users_account_index_path %></li>
-          <li class="divider"></li>
-          <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
-        </li>
-      <% else %>
-        <li><%= link_to "All Products", products_path %></li>
-        <li><%= link_to 'Login', user_session_path %></li>
-        <li><%= link_to "Sign up", new_user_registration_path %></li>
-      <% end %>
-    </ul>
-    <nav>
-      <div class="nav-wrapper deep-purple accent-2">
-        <div class = "container">
+  <ul class="side-nav" id="mobile-demo">
+    <% if user_signed_in? %>
+    <h5 class = " deep-purple accent-2 title-mobile-navSide"><li class = "purple-text text-lighten-5"><%= current_user.username %></li></h5>
+    <li><%= link_to "All Products", products_path %></li>
+    <li><%= link_to 'New Product', new_product_path %></li>
+    <li><%= link_to 'My Products', users_products_path, class: 'grey-text text-darken-4'%></li>
+    <li><%= link_to 'My Account', users_account_index_path %></li>
+    <li class="divider"></li>
+    <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+  </li>
+  <% else %>
+  <li><%= link_to "All Products", products_path %></li>
+  <li><%= link_to 'Login', user_session_path %></li>
+  <li><%= link_to "Sign up", new_user_registration_path %></li>
+  <% end %>
+</ul>
+<div class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper deep-purple accent-2">
+      <div class = "container">
         <div class = "row">
           <%= link_to 'FindTrade', root_url, class: "brand-logo"%>
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -49,22 +50,22 @@
                 <i class="material-icons left">account_circle</i><i class="material-icons right">arrow_drop_down</i></a>
               </li>
               <% else %>
-                  <li><%= link_to 'Login', user_session_path %></li>
-                    <li><%= link_to "Sign up", new_user_registration_path %><br /></li>
+              <li><%= link_to 'Login', user_session_path %></li>
+              <li><%= link_to "Sign up", new_user_registration_path %><br /></li>
               <% end %>
             </ul>
           </div>
         </div>
       </div>
-      </div>
-    </nav>
-
-    <div class = "container">
-      <%= yield %>
     </div>
+  </nav>
+</div>
+<div class = "container">
+  <%= yield %>
+</div>
 
-    <script>
-      $(".button-collapse").sideNav();
-    </script>
-  </body>
+<script>
+  $(".button-collapse").sideNav();
+</script>
+</body>
 </html>

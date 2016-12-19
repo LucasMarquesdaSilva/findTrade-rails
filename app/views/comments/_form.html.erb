@@ -1,10 +1,7 @@
-
-<h4>Post a Comment</h4>
-
+<h5 class = "grey-text text-darken-2">Post a Comment</h5>
 <%= form_for [ @product, @comment ] do |f| %>
  <div class="input-field">
-  <%= f.label :body, for: 'textarea_comment' %>
-  <%= f.text_area :body, id: 'textarea_comment', class: 'materialize-textarea' %>
+  <%= f.text_area :body, id: 'textarea_comment', class: 'materialize-textarea', placeholder: "Your Comment here" %>
 </div>
 <div class = "input-field">
   <%= f.submit 'comment', class: "waves-effect waves-light btn" %>
