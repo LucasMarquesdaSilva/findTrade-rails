@@ -21,9 +21,10 @@
     <ul class="side-nav" id="mobile-demo">
       <% if user_signed_in? %>
         <h5 class = " deep-purple accent-2 title-mobile-navSide"><li class = "purple-text text-lighten-5"><%= current_user.username %></li></h5>
-        <li><%= link_to 'New Product', new_product_path %></li>
+          <li><%= link_to "All Products", products_path %></li>
+          <li><%= link_to 'New Product', new_product_path %></li>
           <li><%= link_to 'My Products', users_products_path, class: 'grey-text text-darken-4'%></li>
-          <li><%= link_to 'My Account' %></li>
+          <li><%= link_to 'My Account', users_account_index_path %></li>
           <li class="divider"></li>
           <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
         </li>
