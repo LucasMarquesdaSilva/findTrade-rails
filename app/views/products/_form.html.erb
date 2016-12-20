@@ -12,23 +12,19 @@
   </div>
   <% end %>
   <div class="input-field">
-    <%= f.label :name, for: "name" %>
-    <%= f.text_field :name, id: "name", class: "validate" %>
+    <%= f.text_field :name, id: "name", class: "validate", placeholder: "Product Name" %>
   </div>
 
   <div class="input-field">
-    <%= f.label :description, for: "description" %>
-    <%= f.text_area :description, class: "materialize-textarea" %>
+    <%= f.text_area :description, class: "materialize-textarea", placeholder: "Description" %>
   </div>
 
   <div class="input-field">
-    <%= f.label :price, for: "price" %>
-    <%= f.number_field :price, class: "validate" %>
+    <%= f.number_field :price, class: "validate", placeholder: "Price" %>
   </div>
 
   <div class="input-field">
-    <%= f.label :category, for: "category" %>
-    <%= f.text_field :category, class: "validate" %>
+    <%= f.text_field :category, class: "validate", placeholder: "Category" %>
   </div>
 
   <div class="file-field input-field">
