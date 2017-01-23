@@ -48,13 +48,17 @@
 }
 
 
-.btn-show-product{
+.btn-login{
   background-color: #4a148c;
+  width: 100%;
 }
-.btn-show-product:hover{
+.btn-login:hover{
   background-color: #ba68c8;
 }
-
+/*.input-field .btn-login{
+  width: 80%;
+}
+*/
 .btn-create-product{
   background-color: #ef6c00;
 }
