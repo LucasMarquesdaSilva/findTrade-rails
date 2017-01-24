@@ -1,13 +1,9 @@
 <div class = "row">
-  <div class = "col s12 m10 push-m1">
-    <div class="card blue-grey darken-1">
-      <div class="card-content white-text">
-        <span class = "card-title">Sign Up</span>
-      </div>
-    </div>
-
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %>
+  <div class = "col s12 m6 push-m3 row-login">
+    <h5 class = "deep-purple-text text-accent-2 h5-login">Create Your Account</h5>
+    <div class = "col s12 m10 push-m1">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
 
       <div class = "input-field">
         <%= f.text_field :username, class: "validate", autofocus: true, placeholder: "Your Name" %>
@@ -25,12 +21,11 @@
         <%= f.password_field :password_confirmation, autocomplete: "off", class: "validate", placeholder: "Confirm Your Password" %>
       </div>
 
-      <div class="actions">
-        <button class = "btn-create-product btn waves-effect waves-light"><%= f.submit "Sign up"%> <i class="material-icons right">send</i></button>
+      <div class="input-field">
+        <button class = "btn-create-user btn waves-effect waves-light"><%= f.submit "Sign up"%> <i class="material-icons right">send</i></button>
         <%= render "devise/shared/links" %>
       </div>
-    <% end %>
-
-
+      <% end %>
+      </div>
   </div>
 </div>

@@ -27,20 +27,31 @@
   background-color: #d50000;
 }
 .row-login{
-  border: 2px solid #4a148c;
+  border: 2px solid #7e57c2;
   margin-top: 1em;
   border-radius: 0.5em;
 }
-.btn-show-product{
+.btn-login-user{
   background-color: #4a148c;
+  margin-bottom: 2em;
 }
-.btn-show-product:hover{
+.btn-login-user:hover{
   background-color: #ba68c8;
 }
+
 .email-login{
   width: 80%;
 }
 .h5-login{
   text-align: center;
   margin-top: 2em;
+}
+
+.btn-create-user{
+  background-color: #ef6c00;
+  margin-bottom: 2em;
+}
+
+.btn-create-user:hover{
+  background-color: #ffa726;
 }
